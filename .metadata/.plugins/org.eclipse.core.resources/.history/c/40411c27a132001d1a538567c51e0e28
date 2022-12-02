@@ -1,0 +1,9 @@
+package metodomain;
+
+public class AprendendoSobreMetodoMain {
+	private String propriedadeQualquer;
+	
+	public String nomeMetodo(){
+		return "Qualquer coisas";
+	}
+}

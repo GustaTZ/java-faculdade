@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="estudoherança.Funcionario"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="br.com.turma.modelo.Conexao"/>
+    <fullyQualifiedTypeName name="br.com.turma.modelo.Usuario"/>
+    <fullyQualifiedTypeName name="br.com.turma.modelo.UsuarioDao"/>
+    <fullyQualifiedTypeName name="pacote1.Teste1"/>
+</qualifiedTypeNameHistroy>

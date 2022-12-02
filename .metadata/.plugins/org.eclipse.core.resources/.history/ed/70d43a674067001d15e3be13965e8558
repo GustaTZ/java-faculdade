@@ -1,0 +1,48 @@
+package br.com.turma.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.turma.modelo.Usuario;
+import br.com.turma.modelo.UsuarioDao;
+
+
+	@WebServlet("/portal")
+	public class PortalServlet extends HttpServlet{
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String nome= request.getParameter("txtnome");
+		String login= request.getParameter("txtlogin");
+		String senha= request.getParameter("txtsenha");
+		
+		Usuario usuario=new Usuario(nome,login,senha);
+		
+		UsuarioDao usuarioDao=new UsuarioDao();
+		usuarioDao.cadastrar(usuario);
+		
+		response.sendRedirect("portal");
+	}
+	@Override
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			
+			System.out.println("chamou o metodo doGet");
+			String acao=request.getParameter("mostrar");
+			System.out.println(acao);
+			if(acao.equals("mostrar")) {
+			UsuarioDao usuarioDao=new UsuarioDao();
+			ArrayList<Usuario> usuarios=usuarioDao.mostrarTodos();
+			
+			request.setAttribute("lista",usuarios);
+			RequestDispatcher rd=request.getRequestDispatcher("mostrartodos.jsp");
+			rd.forward(request, response);
+		}
+	}
+}
